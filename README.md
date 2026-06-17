@@ -192,3 +192,7 @@
 9. 完成了新建自动任务弹窗
 10. 初步建立了新建对话与自动任务之间的功能关系
 ```
+<img width="2489" height="1439" alt="image" src="https://github.com/user-attachments/assets/9835a1a5-bd80-4fd9-bfde-b819f1888dd6" />
+<img width="2489" height="1439" alt="image" src="https://github.com/user-attachments/assets/574cc55d-cf49-41b7-8dbd-06a8dad7cb13" />
+<img width="2489" height="1439" alt="image" src="https://github.com/user-attachments/assets/ca1733cf-2a1c-4454-bacc-d730ab11b2c4" />
+
