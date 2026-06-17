@@ -1,0 +1,48 @@
+{
+  "name": "marvis-frontend",
+  "private": true,
+  "version": "0.2.0",
+  "main": "electron/main.cjs",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "electron:dev": "concurrently \"cross-env NODE_ENV=development vite\" \"wait-on http://localhost:5173 && cross-env NODE_ENV=development electron .\"",
+    "electron:devtools": "concurrently \"cross-env NODE_ENV=development OPEN_DEVTOOLS=true vite\" \"wait-on http://localhost:5173 && cross-env NODE_ENV=development OPEN_DEVTOOLS=true electron .\"",
+    "electron:preview": "vite build && electron .",
+    "dist": "vite build && electron-builder --win",
+    "test:visual": "npx playwright test tests/screenshot.spec.ts && npx tsx tests/visual-diff.ts"
+  },
+  "build": {
+    "productName": "Marvis",
+    "appId": "com.marvis.clone",
+    "directories": { "output": "release" },
+    "files": ["dist/**/*", "electron/**/*", "package.json"],
+    "win": { "target": ["nsis"] }
+  },
+  "dependencies": {
+    "lucide-react": "^0.383.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.45.0",
+    "@types/pixelmatch": "^5.2.6",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "electron": "^30.0.0",
+    "electron-builder": "^24.13.0",
+    "pixelmatch": "^5.3.0",
+    "playwright": "^1.45.0",
+    "pngjs": "^7.0.0",
+    "tsx": "^4.15.0",
+    "typescript": "^5.4.5",
+    "vite": "^5.3.0",
+    "wait-on": "^7.2.0"
+  }
+}
